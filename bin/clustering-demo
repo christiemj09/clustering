@@ -6,7 +6,7 @@ from clustering import UnionFind
 
 
 def demo():
-    """Clustering demo. Run from package root."""
+    """Clustering demo. Run from repository root."""
     
     # Initialize sets as disjoint singletons
     with open('examples/items.csv', 'r') as items:

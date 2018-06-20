@@ -7,7 +7,7 @@ entities in some domain.
 ## Usage
 
 ```
-$ # source a virtual environment (example uses [virtualenvwrapper](http://virtualenvwrapper.readthedocs.io/en/latest/))
+$ # source a virtual environment (example uses virtualenvwrapper)
 $ workon clustering
 (clustering) $ # install clustering module
 (clustering) $ pip install -e git+https://github.com/christiemj09/clustering.git@b0da608fa2482e1828dcfa09ce7cff6362b751e4#egg=clustering
@@ -29,4 +29,4 @@ Python 3.6.5
 ## Example
 
 To run some example code demonstrating how to use this module in a more applied setting, clone this repository and run the script `clustering-demo`
-from the repository root. Example files are contained in the `example` directory.
+from the repository root. Example files are contained in the `examples` directory.
