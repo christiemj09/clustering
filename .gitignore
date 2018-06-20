@@ -5,3 +5,5 @@ input
 output
 tests/test.out
 *~
+*.pyc
+__pycache__
