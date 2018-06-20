@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import csv
+
+from clustering import UnionFind
+
+
+def demo():
+    """Clustering demo. Run from package root."""
+    
+    # Initialize sets as disjoint singletons
+    with open('examples/items.csv', 'r') as items:
+        reader = csv.DictReader(items)
+        uf = UnionFind(row['item'] for row in reader)
+        # ^^ make these integers if doing it for real
+    
+    # Cluster equivalent items
+    with open('examples/equivalent_items.csv', 'r') as equivalent_items:
+        reader = csv.DictReader(equivalent_items)
+        for row in reader:
+            uf.union(row['item1'], row['item2'])
+    
+    # Output clusters
+    with open('examples/item_clusters.csv', 'w') as item_clusters:
+        writer = csv.writer(item_clusters)
+        writer.writerow(['item', 'cluster'])
+        writer.writerows([item, uf.find(item)] for item in uf.sets)
+
+
+if __name__ == '__main__':
+    demo()
